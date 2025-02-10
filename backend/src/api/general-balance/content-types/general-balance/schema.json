@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "general_balances",
+  "info": {
+    "singularName": "general-balance",
+    "pluralName": "general-balances",
+    "displayName": "general-balance"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "decimal",
+      "required": false,
+      "default": 0
+    },
+    "month": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

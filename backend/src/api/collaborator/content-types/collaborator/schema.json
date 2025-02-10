@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collaborators",
+  "info": {
+    "singularName": "collaborator",
+    "pluralName": "collaborators",
+    "displayName": "collaborator",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "unique": false
+    },
+    "phone": {
+      "type": "string",
+      "required": false
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "treasuries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::treasury.treasury",
+      "mappedBy": "collaborator"
+    },
+    "dui": {
+      "type": "string",
+      "unique": true,
+      "required": false
+    }
+  }
+}

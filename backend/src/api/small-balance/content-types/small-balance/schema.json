@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "small_balances",
+  "info": {
+    "singularName": "small-balance",
+    "pluralName": "small-balances",
+    "displayName": "small-balance"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "decimal",
+      "required": false,
+      "default": 0
+    },
+    "month": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

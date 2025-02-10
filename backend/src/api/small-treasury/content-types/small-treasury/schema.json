@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "small_treasuries",
+  "info": {
+    "singularName": "small-treasury",
+    "pluralName": "small-treasuries",
+    "displayName": "small-treasury",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "debit",
+        "credit"
+      ],
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}
