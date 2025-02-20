@@ -445,5 +445,6 @@ export class CreateTreasuryReport {
 
     // finalize the PDF and end the stream
     doc.end();
+    return pdfPath;
   }
 }
