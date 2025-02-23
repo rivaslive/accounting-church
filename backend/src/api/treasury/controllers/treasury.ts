@@ -87,7 +87,7 @@ async function onEditBalance(
   _date: dayjs.ConfigType,
   amount: number,
 ) {
-  const date = dayjs(_date);
+  const date = dayjs(_date).set('days', 15);
   const startOf = date.startOf('month');
   const endOf = date.endOf('month');
 

@@ -38,7 +38,7 @@ function AppProvider({children}: PropsWithChildren) {
 
   return (
     <ThemeProvider value={isDark ? DarkTheme : DefaultTheme}>
-      <StatusBar barStyle={isDark ? 'dark-content' : 'light-content'} />
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
       {children}
     </ThemeProvider>
   );

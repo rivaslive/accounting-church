@@ -22,7 +22,7 @@
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
     "@react-navigation/stack": "^7.1.1",
-    "@redshank/native": "^4.0.9",
+    "@redshank/native": "^4.0.10",
     "@tanstack/react-query": "^5.66.7",
     "axios": "^1.7.9",
     "dayjs": "^1.11.13",
@@ -33,6 +33,7 @@
     "react-native-reanimated": "^3.16.7",
     "react-native-safe-area-context": "^5.2.0",
     "react-native-screens": "^4.7.0",
+    "react-native-svg": "^15.11.1",
     "react-native-web": "^0.19.13",
     "react-native-webview": "^13.13.2",
     "zustand": "^5.0.3"

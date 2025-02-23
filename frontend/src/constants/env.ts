@@ -1,6 +1,6 @@
 const { EXPO_PUBLIC_SERVER_URL, EXPO_PUBLIC_AUTH_PUBLIC_TOKEN } = {
-  EXPO_PUBLIC_SERVER_URL: 'https://accounting-church-production.up.railway.app',
-  // EXPO_PUBLIC_SERVER_URL: 'http://localhost:1337',
+  // EXPO_PUBLIC_SERVER_URL: 'https://accounting-church-production.up.railway.app',
+  EXPO_PUBLIC_SERVER_URL: 'http://localhost:1337',
   EXPO_PUBLIC_AUTH_PUBLIC_TOKEN:
     'cd4e0fec9e1b9eaea86ad9fff66efde337925a04ad2f7aeb3d8d24dc32d65e4c6ce88a8fa595e7ef4dca6e631f3a01a6c5a8b46546f3d9b8b6c16973a762f22417cdf91c65806cb8465ffaf73050a549da6790f31fcf4b4378f05fa2e6028672b0011f565d1e628774f55135fa3fd889b3eea74800c807a115e45380cc18d351',
 };

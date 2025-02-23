@@ -8,12 +8,12 @@ import {
   Select,
   Text,
 } from '@redshank/native';
-import {TREASURY_CREDIT_TYPE_OPTIONS} from '@/constants/treasury/maps';
-import {useMemo, useState} from 'react';
-import {Treasury, TreasuryRequest} from '@/api';
-import {useSaveTreasury, useUpdateTreasury} from '@/store/treasury';
-import type {FormInstance} from 'rc-field-form/es/interface';
-import {useFilterStore} from '@/store/filters.ts';
+import { TREASURY_CREDIT_TYPE_OPTIONS } from '@/constants/treasury/maps';
+import { useMemo, useState } from 'react';
+import { Treasury, TreasuryRequest } from '@/api';
+import { useSaveTreasury, useUpdateTreasury } from '@/store/treasury';
+import type { FormInstance } from 'rc-field-form/es/interface';
+import { useFilterStore } from '@/store/filters.ts';
 
 export function CreateCredit({
   visible,
@@ -26,7 +26,7 @@ export function CreateCredit({
   onClose: () => void;
   isEditing?: boolean;
 }) {
-  const {date} = useFilterStore();
+  const { date } = useFilterStore();
 
   const defaultValues = {
     date: date.toDate(),
@@ -40,8 +40,9 @@ export function CreateCredit({
     undefined,
   );
 
-  const {mutateAsync, ...actionsMutation} = useSaveTreasury();
-  const {mutateAsync: onUpdateMutation, ...actionsUpdate} = useUpdateTreasury();
+  const { mutateAsync, ...actionsMutation } = useSaveTreasury();
+  const { mutateAsync: onUpdateMutation, ...actionsUpdate } =
+    useUpdateTreasury();
 
   const errorText = useMemo(() => {
     if (isEditing && actionsUpdate?.error) {
@@ -99,7 +100,7 @@ export function CreateCredit({
           </Form.Item>
 
           <Form.Item label="Date" name="date" required>
-            <DatePicker format="D MMM, YYYY" />
+            <DatePicker isDisabled={isEditing} format="D MMM, YYYY" />
           </Form.Item>
 
           <Form.Item label="Monto" name="amount" required>

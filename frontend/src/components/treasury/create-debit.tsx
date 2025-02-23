@@ -108,7 +108,7 @@ export function CreateDebit({
           )}
 
           <Form.Item label="Date" name="date" required>
-            <DatePicker format="D MMM, YYYY" />
+            <DatePicker isDisabled={isEditing} format="D MMM, YYYY" />
           </Form.Item>
 
           <Form.Item label="Monto" name="amount" required>
