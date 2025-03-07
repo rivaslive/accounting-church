@@ -31,6 +31,8 @@ export namespace TreasuryRequest {
         PASTORAL_SAVINGS = 'pastoral savings',
         SALARY_ADVANCE = 'salary advance',
         SALARY = 'salary',
+        VIATICOS_FAMILIA_PASTORAL = 'viaticos familia pastoral',
+        VIATICOS = 'viaticos',
         OTHER = 'other',
     }
 }

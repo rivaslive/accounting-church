@@ -52,6 +52,8 @@
         "pastoral savings",
         "salary advance",
         "salary",
+        "viaticos familia pastoral",
+        "viaticos",
         "other"
       ],
       "required": false,

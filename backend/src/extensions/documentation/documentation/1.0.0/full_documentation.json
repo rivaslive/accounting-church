@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-23T00:11:26.145Z"
+    "x-generation-date": "2025-03-07T05:14:09.851Z"
   },
   "x-strapi-config": {
     "plugins": [],
@@ -3631,6 +3631,8 @@
                     "pastoral savings",
                     "salary advance",
                     "salary",
+                    "viaticos familia pastoral",
+                    "viaticos",
                     "other"
                   ]
                 },
@@ -6262,6 +6264,8 @@
                   "pastoral savings",
                   "salary advance",
                   "salary",
+                  "viaticos familia pastoral",
+                  "viaticos",
                   "other"
                 ]
               },
@@ -6429,6 +6433,8 @@
                         "pastoral savings",
                         "salary advance",
                         "salary",
+                        "viaticos familia pastoral",
+                        "viaticos",
                         "other"
                       ]
                     },
@@ -6808,6 +6814,8 @@
               "pastoral savings",
               "salary advance",
               "salary",
+              "viaticos familia pastoral",
+              "viaticos",
               "other"
             ]
           },

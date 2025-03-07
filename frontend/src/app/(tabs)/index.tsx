@@ -148,15 +148,6 @@ export default function HomeScreen() {
           <Box gap={1} p={2}>
             <Box flexDirection="row" alignItems="center" gap={1}>
               <Text size="sm" fontWeight="400">
-                Saldo Anterior:
-              </Text>
-
-              <Text size="sm" color={getColorForAmount(balance?.totalBefore)}>
-                {formatToMoney(balance?.totalBefore)}
-              </Text>
-            </Box>
-            <Box flexDirection="row" alignItems="center" gap={1}>
-              <Text size="sm" fontWeight="400">
                 Total Ofrendas:
               </Text>
 
@@ -168,6 +159,15 @@ export default function HomeScreen() {
               </Text>
 
               <Text size="sm">{formatToMoney(totals.totalTithe)}</Text>
+            </Box>
+            <Box flexDirection="row" alignItems="center" gap={1}>
+              <Text size="sm" fontWeight="400">
+                Saldo Anterior:
+              </Text>
+
+              <Text size="sm" color={getColorForAmount(balance?.totalBefore)}>
+                {formatToMoney(balance?.totalBefore)}
+              </Text>
             </Box>
             <Box flexDirection="row" alignItems="center" gap={1}>
               <Text size="md" fontWeight="400">

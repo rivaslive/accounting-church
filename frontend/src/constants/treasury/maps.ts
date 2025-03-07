@@ -15,6 +15,8 @@ export const TREASURY_TYPE_MAP_LABEL = {
   [Treasury.type.HELP_BIBLICAL_THEOLOGICAL_COMMITTEE]:
     'Ayuda al comite biblico teologico',
   [Treasury.type.OTHER]: 'Otro',
+  [Treasury.type.VIATICOS]: 'Viaticos',
+  [Treasury.type.VIATICOS_FAMILIA_PASTORAL]: 'Viaticos familia pastoral',
 };
 
 export const TREASURY_DEBIT_TYPE_OPTIONS: SelectItemProps[] = [
@@ -47,22 +49,19 @@ export const TREASURY_DEBIT_TYPE_OPTIONS: SelectItemProps[] = [
 
 export const TREASURY_CREDIT_TYPE_OPTIONS: SelectItemProps[] = [
   {
-    key: Treasury.type.SALARY_ADVANCE,
-    value: Treasury.type.SALARY_ADVANCE,
-    label: TREASURY_TYPE_MAP_LABEL[Treasury.type.SALARY_ADVANCE],
+    key: Treasury.type.SALARY,
+    value: Treasury.type.SALARY,
+    label: TREASURY_TYPE_MAP_LABEL[Treasury.type.SALARY],
+  },
+  {
+    key: Treasury.type.VIATICOS_FAMILIA_PASTORAL,
+    value: Treasury.type.VIATICOS_FAMILIA_PASTORAL,
+    label: TREASURY_TYPE_MAP_LABEL[Treasury.type.VIATICOS_FAMILIA_PASTORAL],
   },
   {
     key: Treasury.type.CAMP_MAINTENANCE,
     value: Treasury.type.CAMP_MAINTENANCE,
     label: TREASURY_TYPE_MAP_LABEL[Treasury.type.CAMP_MAINTENANCE],
-  },
-  {
-    key: Treasury.type.HELP_BIBLICAL_THEOLOGICAL_COMMITTEE,
-    value: Treasury.type.HELP_BIBLICAL_THEOLOGICAL_COMMITTEE,
-    label:
-      TREASURY_TYPE_MAP_LABEL[
-        Treasury.type.HELP_BIBLICAL_THEOLOGICAL_COMMITTEE
-      ],
   },
   {
     key: Treasury.type.HELP_BIBLICAL_THEOLOGICAL_COMMITTEE,
@@ -83,9 +82,14 @@ export const TREASURY_CREDIT_TYPE_OPTIONS: SelectItemProps[] = [
     label: TREASURY_TYPE_MAP_LABEL[Treasury.type.ISSS_CONTRIBUTION],
   },
   {
-    key: Treasury.type.SALARY,
-    value: Treasury.type.SALARY,
-    label: TREASURY_TYPE_MAP_LABEL[Treasury.type.SALARY],
+    key: Treasury.type.VIATICOS,
+    value: Treasury.type.VIATICOS,
+    label: TREASURY_TYPE_MAP_LABEL[Treasury.type.VIATICOS],
+  },
+  {
+    key: Treasury.type.SALARY_ADVANCE,
+    value: Treasury.type.SALARY_ADVANCE,
+    label: TREASURY_TYPE_MAP_LABEL[Treasury.type.SALARY_ADVANCE],
   },
   {
     key: Treasury.type.OTHER,

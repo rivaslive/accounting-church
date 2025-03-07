@@ -582,6 +582,8 @@ export interface ApiTreasuryTreasury extends Struct.CollectionTypeSchema {
         'pastoral savings',
         'salary advance',
         'salary',
+        'viaticos familia pastoral',
+        'viaticos',
         'other',
       ]
     > &

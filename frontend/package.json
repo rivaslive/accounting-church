@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start --reset-cache",
-    "test": "jest"
+    "test": "jest",
+    "build:api": "node scripts/generate-api-sdk.js generate-sdk --url htpp://localhost:1337 --name 'Backend' -o './src/api'"
   },
   "dependencies": {
     "@dev-plugins/react-query": "^0.1.0",
@@ -56,6 +57,8 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
+    "json-schema-ref-parser": "^9.0.9",
+    "openapi-typescript-codegen": "^0.29.0",
     "prettier": "2.8.8",
     "react-test-renderer": "18.3.1",
     "typescript": "5.0.4"

@@ -126,7 +126,7 @@ export type Collaborator = {
                 documentId?: string;
             }>;
         };
-        type?: 'worship' | 'worship san jose' | 'tithe' | 'donation' | 'AFP contribution' | 'ISSS contribution' | 'help biblical theological committee' | 'camp maintenance' | 'pastoral savings' | 'salary advance' | 'salary' | 'other';
+        type?: 'worship' | 'worship san jose' | 'tithe' | 'donation' | 'AFP contribution' | 'ISSS contribution' | 'help biblical theological committee' | 'camp maintenance' | 'pastoral savings' | 'salary advance' | 'salary' | 'viaticos familia pastoral' | 'viaticos' | 'other';
         createdAt?: string;
         updatedAt?: string;
         publishedAt?: string;
