@@ -51,6 +51,8 @@ const updateFutureBalances = async (_date: dayjs.ConfigType) => {
       const allTransactions = await strapi.entityService.findMany(
         'api::treasury.treasury',
         {
+          start: 0,
+          limit: 1000,
           filters: {
             date: {
               $gte: startOfAfter.toISOString(),

@@ -16,7 +16,8 @@ export function useGetAllTreasury() {
       return apiSdkInstance.treasury.getTreasuries({
         populate: '*',
         filters: treasuryFilters,
-        paginationWithCount: false,
+        paginationPageSize: 1000,
+        paginationPage: 0,
       });
     },
   });

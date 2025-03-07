@@ -143,7 +143,7 @@ export function CreateDebit({
           </Form.Item>
         </Form>
 
-        <KeyboardSpace />
+        {visible && <KeyboardSpace />}
       </BottomSheet>
     </>
   );

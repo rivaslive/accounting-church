@@ -135,7 +135,7 @@ export function CreateCredit({
           </Form.Item>
         </Form>
 
-        <KeyboardSpace />
+        {visible && <KeyboardSpace />}
       </BottomSheet>
     </>
   );

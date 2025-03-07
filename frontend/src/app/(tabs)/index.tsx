@@ -1,6 +1,6 @@
-import React, {useMemo, useState} from 'react';
-import {ActivityIndicator, Platform, RefreshControl} from 'react-native';
-import {useGetAllTreasury, useGetTreasuryTotal} from '@/store/treasury';
+import React, { useMemo, useState } from 'react';
+import { ActivityIndicator, Platform, RefreshControl } from 'react-native';
+import { useGetAllTreasury, useGetTreasuryTotal } from '@/store/treasury';
 import {
   Box,
   Container,
@@ -11,14 +11,14 @@ import {
   Icon,
   Text,
 } from '@redshank/native';
-import {Treasury} from '@/api';
-import {TreasuryCard} from '@/components/treasury/treasury-card.tsx';
-import {CreateDebit} from '@/components/treasury/create-debit.tsx';
-import {CreateCredit} from '@/components/treasury/create-credit.tsx';
-import {EmptyState} from '@/components/EmptyState.tsx';
-import {formatToDate, formatToMoney} from '@/utils/format.ts';
-import {useFilterStore} from '@/store/filters.ts';
-import {getColorForAmount} from '@/utils/colors.ts';
+import { Treasury } from '@/api';
+import { TreasuryCard } from '@/components/treasury/treasury-card.tsx';
+import { CreateDebit } from '@/components/treasury/create-debit.tsx';
+import { CreateCredit } from '@/components/treasury/create-credit.tsx';
+import { EmptyState } from '@/components/EmptyState.tsx';
+import { formatToDate, formatToMoney } from '@/utils/format.ts';
+import { useFilterStore } from '@/store/filters.ts';
+import { getColorForAmount } from '@/utils/colors.ts';
 import dayjs from 'dayjs';
 
 export default function HomeScreen() {
@@ -28,9 +28,9 @@ export default function HomeScreen() {
   const [isEditing, setIsEditing] = useState(false);
   const [visible, , actionVisible] = useModal();
   const [visibleCredit, , actionVisibleCredit] = useModal();
-  const {onNextMonth, onPrevMonth, date} = useFilterStore();
+  const { onNextMonth, onPrevMonth, date } = useFilterStore();
 
-  const {data, isLoading, isRefetching, refetch} = useGetAllTreasury();
+  const { data, isLoading, isRefetching, refetch } = useGetAllTreasury();
   const {
     data: balance,
     isLoading: isLoadingBalance,
@@ -38,14 +38,23 @@ export default function HomeScreen() {
     refetch: refetchBalance,
   } = useGetTreasuryTotal();
 
-  const totalMonth = useMemo(() => {
-    return data?.data?.reduce?.((acc, item) => {
-      if (item.direction === Treasury.direction.CREDIT) {
-        return acc - item.amount;
-      } else {
-        return acc + item.amount;
+  const totals = useMemo(() => {
+    let totalMonth = 0;
+    let totalTithe = 0;
+
+    data?.data?.forEach?.(item => {
+      if (item.type === Treasury.type.TITHE) {
+        totalTithe += item.amount;
+      } else if (item.direction === Treasury.direction.DEBIT) {
+        totalMonth += item.amount;
+        // totalMonth -= item.amount;
       }
     }, 0);
+
+    return {
+      totalMonth,
+      totalTithe,
+    };
   }, [data]);
 
   const onEdit = (item: Treasury) => {
@@ -138,24 +147,31 @@ export default function HomeScreen() {
           )}
           <Box gap={1} p={2}>
             <Box flexDirection="row" alignItems="center" gap={1}>
-              <Text size="md" fontWeight="400">
+              <Text size="sm" fontWeight="400">
                 Saldo Anterior:
               </Text>
 
-              <Text size="md" color={getColorForAmount(balance?.totalBefore)}>
+              <Text size="sm" color={getColorForAmount(balance?.totalBefore)}>
                 {formatToMoney(balance?.totalBefore)}
               </Text>
             </Box>
             <Box flexDirection="row" alignItems="center" gap={1}>
-              <Text size="md" fontWeight="400">
-                Saldo Neto:
+              <Text size="sm" fontWeight="400">
+                Total Ofrendas:
               </Text>
 
-              <Text size="md">{formatToMoney(totalMonth)}</Text>
+              <Text size="sm">{formatToMoney(totals.totalMonth)}</Text>
+            </Box>
+            <Box flexDirection="row" alignItems="center" gap={1}>
+              <Text size="sm" fontWeight="400">
+                Total Diezmos:
+              </Text>
+
+              <Text size="sm">{formatToMoney(totals.totalTithe)}</Text>
             </Box>
             <Box flexDirection="row" alignItems="center" gap={1}>
               <Text size="md" fontWeight="400">
-                Total en Caja:
+                Ingresos de {formatToDate(date, 'MMMM')}:
               </Text>
 
               <Text size="md" color={getColorForAmount(balance?.total)}>
